@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:pink;">
+<h2>Apply for Loan</h2>
+<form action="register" method="post" >
+    {% csrf_token %}
+    <p>Name:</p>
+    <input type="text" name="first_name" placeholder="Enter your first_name">
+    <input type="text" name="last_name" placeholder="Enter your last_name"><br><br>
+    <p>Adress:</p>
+    <input type="text" name="adress" placeholder="Enter your adress">
+    <p>email:</p>
+    <input type="email" name="email" placeholder="Enter your email"><br><br>
+    <p>Choose your Gender:</p>
+    <input type="radio" id="male" name="Gender" value="MALE">
+    <label for="male">MALE</label><br>
+    <input type="radio" id="female" name="Gender" value="FEMALE">
+    <label for="female">FEMALE</label><br>
+    <input type="radio" id="other" name="Gender" value="OTHER">
+    <label for="other">OTHER</label><br>
+    <p>Mobile:</p>
+    <input type="number" name="phoneNum" placeholder="Enter your phoneNum">
+    <p>DOB:</p>
+    <input type="date" name="DOB" placeholder="Enter your DOB">
+    <p>Age:</p>
+    <input type="number" name="age" placeholder="Enter your age">
+    <p>Materials Provided:</p>
+    <input type="checkbox" id="Material1" name="Material1" value="Credit Card">
+    <label for="Material1"> Credit Card</label><br>
+    <input type="checkbox" id="Material2" name="Material2" value="Debit Card">
+    <label for="Material2"> Debit Card</label><br>
+    <input type="checkbox" id="Material3" name="Material3" value="Check Book">
+    <label for="Material3"> Check Book</label><br><br>
+    <label for="district">Choose a District:</label>
+     <select name="district" id="district">
+       <option value="Palakkad">Palakkad</option>
+       <option value="Trissur">Trissur</option>
+       <option value="Ernankulam">Ernankulam</option>
+       <option value="Kozhikode">Kozhikode</option>
+     </select><br><br>
+    <label for="branch">Choose a Branch:</label>
+     <select name="branch" id="branch">
+       <option value="Palakkad">parli</option>
+       <option value="Trissur">Irinjalakuda</option>
+       <option value="Ernankulam">Kakkanad</option>
+       <option value="Kozhikode">Kozhikode</option>
+     </select><br><br>
+    <label for="account">Select Account type:</label>
+     <select name="account" id="account">
+       <option value="Current account">Current Account </option>
+       <option value="Savings account">Savings account</option>
+     </select><br><br>
+    <input type="submit">
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+</html>
